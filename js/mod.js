@@ -1,5 +1,5 @@
 let modInfo = {
-	name: "The ??? Tree",
+	name: "The Yellow Tree",
 	id: "nizzytree123",
 	author: "NIZNEB",
 	pointsName: "points",
@@ -43,6 +43,10 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade('y',11)) gain = gain.times(2)
+	if (hasUpgrade('y', 12)) gain = gain.times(upgradeEffect('y', 12))
+	if (hasUpgrade('y', 14)) gain = gain.times(upgradeEffect('y', 14))
+
 	return gain
 }
 
